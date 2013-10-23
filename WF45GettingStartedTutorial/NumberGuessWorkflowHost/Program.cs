@@ -4,6 +4,7 @@ using System.Linq;
 using System.Activities;
 using System.Activities.Statements;
 using NumberGuessWorkflowActivities;
+using FlowchartNumberGuessWorkflow;
 using System.Threading;
 using System.Collections.Generic;
 
@@ -20,7 +21,7 @@ namespace NumberGuessWorkflowHost
 			var inputs = new Dictionary<string, object>() { { "MaxNumber", 100 } };
 
 			WorkflowApplication wfApp =
-				new WorkflowApplication(new SequentialNumberGuessWorkflow(), inputs);
+				new WorkflowApplication(new FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow(), inputs);
 
 			wfApp.Completed = delegate(WorkflowApplicationCompletedEventArgs e)
 			{
