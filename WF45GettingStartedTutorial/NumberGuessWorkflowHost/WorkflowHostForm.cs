@@ -12,7 +12,7 @@ using System.Activities.DurableInstancing;
 using System.Activities;
 using System.Data.SqlClient;
 using System.IO;
-
+using System.Activities.Tracking;
 
 namespace NumberGuessWorkflowHost
 {
@@ -76,7 +76,15 @@ namespace NumberGuessWorkflowHost
 
 			// Clear the status window.
 			WorkflowStatus.Clear();
-
+			//
+			// If there is tracking data for this workflow, display it
+			// in the status window.
+			if (File.Exists(WorkflowInstanceId.ToString()))
+			{
+				string status = File.ReadAllText(WorkflowInstanceId.ToString());
+				UpdateStatus(status);
+			}
+			//
 			// Get the workflow version and display it.
 			// If the workflow is just starting then this info will not
 			// be available in the persistence store so do not try and retrieve it.
@@ -138,7 +146,25 @@ namespace NumberGuessWorkflowHost
 			// from the WriteLine activities so we can display it in the form.
 			StringWriter sw = new StringWriter();
 			wfApp.Extensions.Add(sw);
+			//
+			// Add the custom tracking participant with a tracking profile
+			// that only emits tracking records for WriteLine activities.
+			StatusTrackingParticipant stp = new StatusTrackingParticipant
+			{
+				TrackingProfile = new TrackingProfile
+				{
+					Queries = {
+						new ActivityStateQuery{
+							ActivityName = "WriteLine",
+							States = { ActivityStates.Executing },
+							Arguments = { "Text" }
+						}
+					}
+				}
+			};
 
+			wfApp.Extensions.Add(stp);
+			//
 			wfApp.Completed = delegate(WorkflowApplicationCompletedEventArgs e)
 			{
 				if (e.CompletionState == ActivityInstanceState.Faulted)
@@ -222,7 +248,7 @@ namespace NumberGuessWorkflowHost
 			wfApp.Run();
 		}
 
-	
+
 		private void QuitGame_Click(object sender, EventArgs e)
 		{
 			if (WorkflowInstanceId == Guid.Empty)
