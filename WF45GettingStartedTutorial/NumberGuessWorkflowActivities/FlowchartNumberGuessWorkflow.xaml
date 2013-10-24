@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,7 +15,7 @@
     <x:Property Name="Turns" Type="OutArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap2010:WorkflowViewState.IdRef>FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow</sap2010:WorkflowViewState.IdRef>
+  <sap2010:WorkflowViewState.IdRef>NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System</x:String>
@@ -40,7 +40,7 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>NumberGuessWorkflowActivities</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>FlowchartNumberGuessWorkflow</AssemblyReference>
+      <AssemblyReference>NumberGuessWorkflowActivities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -250,7 +250,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow" sap:VirtualizedContainerService.HintSize="794,941" />
+      <sap2010:ViewStateData Id="NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow" sap:VirtualizedContainerService.HintSize="794,941" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
