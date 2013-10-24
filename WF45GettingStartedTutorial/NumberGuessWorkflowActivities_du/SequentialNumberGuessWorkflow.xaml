@@ -87,44 +87,33 @@
             </InArgument>
           </Assign.Value>
         </Assign>
-        <If sap2010:WorkflowViewState.IdRef="If_2">
+        <If>
           <If.Condition>
             <InArgument x:TypeArguments="x:Boolean">
               <mca:CSharpValue x:TypeArguments="x:Boolean">Guess != Target</mca:CSharpValue>
             </InArgument>
           </If.Condition>
           <If.Then>
-            <If sap2010:WorkflowViewState.IdRef="If_1">
+            <If>
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <mca:CSharpValue x:TypeArguments="x:Boolean">Guess &lt; Target</mca:CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1">
-                  <InArgument x:TypeArguments="x:String">
-                    <mca:CSharpValue x:TypeArguments="x:String">Guess + " is too low."</mca:CSharpValue>
-                  </InArgument>
-                </WriteLine>
+                <WriteLine Text="Your guess is too low." sap2010:WorkflowViewState.IdRef="WriteLine_1" />
               </If.Then>
               <If.Else>
-                <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_2">
-                  <InArgument x:TypeArguments="x:String">
-                    <mca:CSharpValue x:TypeArguments="x:String">Guess + " is too high."</mca:CSharpValue>
-                  </InArgument>
-                </WriteLine>
+                <WriteLine Text="Your guess is too high." sap2010:WorkflowViewState.IdRef="WriteLine_2" />
               </If.Else>
+              <sap2010:WorkflowViewState.IdRef>If_1</sap2010:WorkflowViewState.IdRef>
             </If>
           </If.Then>
+          <sap2010:WorkflowViewState.IdRef>If_2</sap2010:WorkflowViewState.IdRef>
         </If>
       </Sequence>
     </DoWhile>
-    <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_3">
-      <InArgument x:TypeArguments="x:String">
-        <mca:CSharpValue x:TypeArguments="x:String">Guess + " is correct. You guessed it in " + Turns + " turns."</mca:CSharpValue>
-      </InArgument>
-    </WriteLine>
-    <sads:DebugSymbol.Symbol>d4wBQzpcVXNlcnNcYW5kcmVhXERvY3VtZW50c1xHaXRIdWJcd3dmLWV4cGVyaW1lbnRzXFdGNDVHZXR0aW5nU3RhcnRlZFR1dG9yaWFsXE51bWJlckd1ZXNzV29ya2Zsb3dBY3Rpdml0aWVzXFNlcXVlbnRpYWxOdW1iZXJHdWVzc1dvcmtmbG93LnhhbWwYLAOAAQ4CAQExBTwOAgE+PQV5DwIBCHoFfhECAQI5CzlyAgFENAs0VgIBPz8JP1cCATlBB3gSAgEJfAl8hAECAQNCCU0YAgEtTglZEgIBIloJdw4CAQpCJEIwAgE4Sg9KfwIBM0UPRVkCAS5WD1ZTAgEoUQ9RWQIBI10PXV0CAQthDXUSAgEQZBNkYwIBEWgRbB0CARxvEXMdAgEWahVqaQIBHXEVcWoCARc=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4wBQzpcVXNlcnNcYW5kcmVhXERvY3VtZW50c1xHaXRIdWJcd3dmLWV4cGVyaW1lbnRzXFdGNDVHZXR0aW5nU3RhcnRlZFR1dG9yaWFsXE51bWJlckd1ZXNzV29ya2Zsb3dBY3Rpdml0aWVzXFNlcXVlbnRpYWxOdW1iZXJHdWVzc1dvcmtmbG93LnhhbWwWLAN1DgIBATEFPA4CATA9BXMPAgECOQs5cgIBNjQLNFYCATE/CT9XAgErQQdyEgIBA0IJTRgCAR9OCVkSAgEUWglxDgIBBEIkQjACASpKD0p/AgElRQ9FWQIBIFYPVlMCARpRD1FZAgEVXQ9dXQIBBWENbhICAQpkE2RjAgELaBFoagIBEmsRa2sCARBoIWg5AgETayFrOgIBEQ==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -143,15 +132,14 @@
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="DoWhile_1" sap:VirtualizedContainerService.HintSize="637,814" />
-      <sap2010:ViewStateData Id="WriteLine_3" sap:VirtualizedContainerService.HintSize="637,62" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="659,1142">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="659,1040">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="NumberGuessWorkflowActivities.SequentialNumberGuessWorkflow_1" sap:VirtualizedContainerService.HintSize="699,1222" />
+      <sap2010:ViewStateData Id="NumberGuessWorkflowActivities.SequentialNumberGuessWorkflow_1" sap:VirtualizedContainerService.HintSize="699,1120" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
