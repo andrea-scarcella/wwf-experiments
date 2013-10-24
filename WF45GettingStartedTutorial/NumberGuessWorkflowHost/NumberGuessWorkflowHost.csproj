@@ -54,10 +54,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FlowchartNumberGuessWorkflow\FlowchartNumberGuessWorkflow.csproj">
-      <Project>{e699cdfd-88c4-40a7-8c44-69ab9cee38ca}</Project>
-      <Name>FlowchartNumberGuessWorkflow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NumberGuessWorkflowActivities\NumberGuessWorkflowActivities.csproj">
       <Project>{98ec024c-6439-44b1-8b1e-29e457b2201f}</Project>
       <Name>NumberGuessWorkflowActivities</Name>
