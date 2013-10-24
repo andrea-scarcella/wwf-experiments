@@ -21,7 +21,8 @@ namespace NumberGuessWorkflowHost
 			var inputs = new Dictionary<string, object>() { { "MaxNumber", 100 } };
 
 			WorkflowApplication wfApp =
-				new WorkflowApplication(new FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow(), inputs);
+				//new WorkflowApplication(new FlowchartNumberGuessWorkflow.FlowchartNumberGuessWorkflow(), inputs);
+				new WorkflowApplication(new StateMachineNumberGuessWorkflow(), inputs);
 
 			wfApp.Completed = delegate(WorkflowApplicationCompletedEventArgs e)
 			{
